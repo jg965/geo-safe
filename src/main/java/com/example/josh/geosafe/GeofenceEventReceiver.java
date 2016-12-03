@@ -13,14 +13,16 @@ import com.pathsense.android.sdk.location.PathsenseGeofenceEventReceiver;
 
 public class GeofenceEventReceiver extends PathsenseGeofenceEventReceiver {
     public static final int NOTIFICATION_ID = 106;
+
     @Override
     protected void onGeofenceEvent(Context context, PathsenseGeofenceEvent pathsenseGeofenceEvent) {
-        if (pathsenseGeofenceEvent.isEgress()) {
+        if (pathsenseGeofenceEvent.isIngress()) {
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(context)
                             .setSmallIcon(R.drawable.pathsense)
                             .setContentTitle("GeoSafe")
-                            .setContentText("You've entered a human trafficing hotspot, please be careful!");
+                            .setContentText("You've entered a human trafficing hotspot, please be careful!")
+                            .setVibrate(new long[]{0, 500, 10, 500, 10, 500});
             NotificationManager mNotificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
