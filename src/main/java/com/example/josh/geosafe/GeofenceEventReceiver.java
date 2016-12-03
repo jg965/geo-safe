@@ -23,7 +23,7 @@ public class GeofenceEventReceiver extends PathsenseGeofenceEventReceiver {
         System.out.println(pathsenseGeofenceEvent.getLocation());
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.pathsense)
+                        .setSmallIcon(R.drawable.logo4)
                         .setContentTitle("GeoSafe")
                         .setContentText(pathsenseGeofenceEvent.isIngress() ?
                                 "You've entered a human trafficking hotspot, please be careful!" :

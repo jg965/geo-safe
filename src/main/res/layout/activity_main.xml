@@ -10,11 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.josh.geosafe.MainActivity">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/front_page_content"-->
-        <!--android:id="@+id/content_text"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/front_page_content"
+        android:id="@+id/content_text"/>
     <!--<Button-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
@@ -30,9 +30,11 @@
         <!--android:text="Turn off Notifications"-->
         <!--android:onClick="unregisterGeofences"/>-->
     <Switch
+        android:layout_marginTop="50dp"
         android:id="@+id/mySwitch"
         android:layout_width="match_parent"
         android:text="Alerts Off"
         android:onClick="checkSwitch"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content_text"/>
 </RelativeLayout>

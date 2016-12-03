@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,11 +19,11 @@
 
         <meta-data
             android:name="com.pathsense.android.sdk.CLIENT_ID"
-            android:value="ayy lmao" />
+            android:value="wpv9VQ1ES5pNiFFjTsfvsCF8HJ507kcWBuSqprMG" />
 
         <meta-data
             android:name="com.pathsense.android.sdk.API_KEY"
-            android:value="ayy lmao" />
+            android:value="6ZSURYuWgx8cwg39Czb932krAf6hijz065Wj37ou" />
     </application>
 
 </manifest>
