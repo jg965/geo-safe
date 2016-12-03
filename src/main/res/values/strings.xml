@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GeoSafe</string>
-    <string name="front_page_content">Welcome to GeoSafe. This app is a utility engineered with your safety in mind. What geosafe does is use cutting-edge geofencing technology in order to warn you when you enter dangerous areas. This gives you knowledge, and therefore power over your surroundings. In order to enable geofencing and alerts for dangerous areas, please enable the switch below.</string>
+    <string name="front_page_content">Welcome to GeoSafe! 
+This app is a utility engineered with your safety in mind. GeoSafe uses cutting-edge geofencing technology in order to warn you when dangerous areas (such as human trafficking hotspots) are entered. In order to enable geofencing and alerts for dangerous areas, please enable the switch below. Once toggled ON, you will receive notifications even after the App is closed.</string>
 </resources>
