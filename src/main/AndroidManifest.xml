@@ -19,11 +19,11 @@
 
         <meta-data
             android:name="com.pathsense.android.sdk.CLIENT_ID"
-            android:value="wpv9VQ1ES5pNiFFjTsfvsCF8HJ507kcWBuSqprMG" />
+            android:value="ayy lmao" />
 
         <meta-data
             android:name="com.pathsense.android.sdk.API_KEY"
-            android:value="6ZSURYuWgx8cwg39Czb932krAf6hijz065Wj37ou" />
+            android:value="ayy lmao" />
     </application>
 
 </manifest>
