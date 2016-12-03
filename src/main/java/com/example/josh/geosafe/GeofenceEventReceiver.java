@@ -8,7 +8,10 @@ import com.pathsense.android.sdk.location.PathsenseGeofenceEvent;
 import com.pathsense.android.sdk.location.PathsenseGeofenceEventReceiver;
 
 /**
- * Created by josh on 12/2/16.
+ * Listener for geofence events. If a geofence event fires, this means that
+ * you are located in ahuman trafficking hotspot. In this case, we will use
+ * a notification to warn you. Upon leaving the hotspot, we will show another
+ * notification that informs you that you have left the hotspot.
  */
 
 public class GeofenceEventReceiver extends PathsenseGeofenceEventReceiver {
@@ -16,16 +19,19 @@ public class GeofenceEventReceiver extends PathsenseGeofenceEventReceiver {
 
     @Override
     protected void onGeofenceEvent(Context context, PathsenseGeofenceEvent pathsenseGeofenceEvent) {
-        if (pathsenseGeofenceEvent.isIngress()) {
-            NotificationCompat.Builder mBuilder =
-                    new NotificationCompat.Builder(context)
-                            .setSmallIcon(R.drawable.pathsense)
-                            .setContentTitle("GeoSafe")
-                            .setContentText("You've entered a human trafficing hotspot, please be careful!")
-                            .setVibrate(new long[]{0, 500, 10, 500, 10, 500});
-            NotificationManager mNotificationManager =
-                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-        }
+        System.out.println(pathsenseGeofenceEvent.getGeofenceId());
+        System.out.println(pathsenseGeofenceEvent.getLocation());
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(context)
+                        .setSmallIcon(R.drawable.pathsense)
+                        .setContentTitle("GeoSafe")
+                        .setContentText(pathsenseGeofenceEvent.isIngress() ?
+                                "You've entered a human trafficking hotspot, please be careful!" :
+                                "All clear, you've exited the human trafficking hotspot")
+                        .setVibrate(new long[]{0, 500, 10, 500, 10, 500});
+        NotificationManager mNotificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+
     }
 }
