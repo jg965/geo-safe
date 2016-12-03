@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Geofence[] geofences = getGeofences();
         for(Geofence geofence: geofences){
             if(geofence.getType().equals("caution")){
-//                providerApi.addGeofence(geofence.getId(),geofence.getLatitude(),geofence.getLongitude(),500,);
+                providerApi.addGeofence(geofence.getId(),geofence.getLatitude(),geofence.getLongitude(),500,GeofenceEventReceiver.class);
             }
         }
     }
